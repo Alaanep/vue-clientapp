@@ -3,16 +3,17 @@
         <h1 class="font-bold">{{title}}</h1>
         <ul>
             <li v-for="item in localExerciseList" :key="item.name">
-                {{item.name}} : {{item.description}}
+                <Exercise: exericse="item"/>
             </li>
         </ul>
     </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{title: string}>();
-//import { title } from 'process';
 
+import {  } from 'process';
+import Exercise from './Exercise.vue';
+defineProps<{title: string}>();
 const localExerciseList=[
     {name: 'Harjutus 1', description: 'Harjutus 1'},
     {name: 'Harjutus 2', description: 'Harjutus 2'},
