@@ -1,4 +1,4 @@
-import {State} from '@/model/exercise';
+import { Exercise, State } from '@/model/exercise';
 import {reactive, toRefs } from 'vue';
 
 const state = reactive<State>({
@@ -18,7 +18,13 @@ export default function useExercise(){
             initialized=true;
         }
     };
-    return {...toRefs(state), load}
+    
+    const addExercise = (exercise: Exercise) => {
+        state.exercises.push(exercise);
+      };
+    
+    return {...toRefs(state), load, addExercise};
+
 }
 
 
