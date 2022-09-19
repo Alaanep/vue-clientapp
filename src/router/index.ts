@@ -1,6 +1,6 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router';
-import ExerciseVue from '@/components/Exercise.vue';
-import AddExerciseVue from '@/components/AddExerciseForm.vue';
+import ExerciseVue from '@/views/Exercise.vue';
+import AddExerciseVue from '@/views/AddExercise.vue';
 import { create } from 'domain';
 
 const routes: Array<RouteRecordRaw>=[
