@@ -41,14 +41,17 @@
     import { Exercise } from '@/model/exercise';
     import useExercise from '@/stores/ExercisesStore';
     import { onMounted, ref, Ref } from 'vue';
+    import { useRouter } from 'vue-router';
 
     const exercise: Ref<Exercise>=ref({name: '', description: ''});
     const {load, addExercise}=useExercise();
+    const router=useRouter();
     onMounted(()=>load());
 
     const submitForm=()=>{
         addExercise({...exercise.value});
         exercise.value.name='';
         exercise.value.description='';
+        router.push({name: 'Harjutused'});
     };
 </script>
