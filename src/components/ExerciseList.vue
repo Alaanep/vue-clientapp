@@ -1,11 +1,13 @@
 <template>
-    <div class="text-center bg-gray-50 text-dark-300">
-        <h1 class="font-bold">{{title}}</h1>
-        <ul>
-            <li v-for="item in localExerciseList" :key="item.name">
-                <Exercise: exericse="item"/>
-            </li>
-        </ul>
+    <div class="min-h-screen flex justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 text-dark-300">
+        <div class="text-center bg-gray-50">
+            <h1 class="font-bold">{{ title }}</h1>
+            <ul>
+                <li v-for="item in localExerciseList" :key="item.name">
+                    <Exercise :exercise="item" />
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 

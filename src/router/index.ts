@@ -1,5 +1,5 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router';
-import ExerciseVue from '@/views/Exercise.vue';
+import ExercisesVue from '@/views/Exercises.vue';
 import AddExerciseVue from '@/views/AddExercise.vue';
 import { create } from 'domain';
 
@@ -7,7 +7,7 @@ const routes: Array<RouteRecordRaw>=[
     {
         path:'/',
         name: 'Harjutused',
-        component: ExerciseVue,
+        component: ExercisesVue,
         props: {title: 'Harjutused'},
     },
     {
