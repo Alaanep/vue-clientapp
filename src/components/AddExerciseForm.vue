@@ -39,14 +39,19 @@
 
 <script setup lang="ts">
     import { Exercise } from '@/model/exercise';
-    import useExercise from '@/stores/ExercisesStore';
-    import { onMounted, ref, Ref } from 'vue';
+    //import useExercise from '@/stores/ExercisesStore';
+    //import { onMounted, ref, Ref } from 'vue';
+    import { useExercisesStore } from '@/stores/exercisesStore';
+    import { ref, Ref } from 'vue';
+
     import { useRouter } from 'vue-router';
 
     const exercise: Ref<Exercise>=ref({name: '', description: ''});
-    const {load, addExercise}=useExercise();
+    //const {load, addExercise}=useExercise();
+    //const router=useRouter();
+    //onMounted(()=>load());
+    const {addExercise}=useExercisesStore();
     const router=useRouter();
-    onMounted(()=>load());
 
     const submitForm=()=>{
         addExercise({...exercise.value});

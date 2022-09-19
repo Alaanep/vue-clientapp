@@ -14,13 +14,14 @@
 <script setup lang="ts">
 
 import {  } from 'process';
-import useExercise from '@/stores/ExercisesStore';
+//import useExercise from '@/stores/ExercisesStore';
+import {useExercisesStore} from '@/stores/ExercisesStore';
 import { onMounted } from 'vue';
 import Exercise from './Exercise.vue';
 
 defineProps<{title: string}>();
-const { exercises, load } = useExercise();
-
-onMounted(() => load());
+//const { exercises, load } = useExercise();
+//onMounted(() => load());
+const {exercises}=useExercisesStore();
 
 </script>
