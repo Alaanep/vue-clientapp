@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Pealkiri</h1>
+        <h1>{{title}}</h1>
         <ul>
             <li>Harjutus 1: Kirjeldus</li>
             <li>Harjutus 2: Kirjeldus</li>
@@ -10,4 +10,7 @@
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{title: string}>();
+//import { title } from 'process';
+</script>

@@ -10,7 +10,7 @@
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
-  <ExerciseList />
+  <ExerciseList title="Harjutuste nimekiri" />
 </template>
 
 <script setup lang="ts">
