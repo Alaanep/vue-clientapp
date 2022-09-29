@@ -1,4 +1,4 @@
-export interface Exercise {
+export interface Tudeng {
     martiklinr: string;
     eesnimi: string;
     perenimi: string;
@@ -8,5 +8,5 @@ export interface Exercise {
 }
 
 export interface State {
-    exercises: Exercise[];
+    exercises: Tudeng[];
 }

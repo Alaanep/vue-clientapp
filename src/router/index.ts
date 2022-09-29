@@ -1,19 +1,19 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router';
-import ExercisesVue from '@/views/Exercises.vue';
-import AddExerciseVue from '@/views/AddExercise.vue';
+import TudengiteVue from '@/views/Tudengid.vue';
+import LisaTudengVue from '@/views/LisaTudeng.vue';
 import { create } from 'domain';
 
 const routes: Array<RouteRecordRaw>=[
     {
         path:'/',
         name: 'Tudengid',
-        component: ExercisesVue,
+        component: TudengiteVue,
         props: {title: 'Tudengid'},
     },
     {
-        path: '/newexercise',
+        path: '/uusTudeng',
         name: 'Lisa tudeng',
-        component: AddExerciseVue,
+        component: LisaTudengVue,
     }
 ];
 

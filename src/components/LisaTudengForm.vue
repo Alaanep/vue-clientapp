@@ -49,7 +49,7 @@
                         @click.prevent="submitForm" 
                         class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">            
                         <span class="absolute left-0 inset-y-0 flex items-center pl-3"></span>
-                        Lisa harjutus
+                        Lisa Tudeng
                     </button>
                 </div>
             </div>
@@ -58,23 +58,23 @@
 </template>
 
 <script setup lang="ts">
-    import { Exercise } from '@/model/exercise';
+    import { Tudeng } from '@/model/tudeng';
     //import useExercise from '@/stores/ExercisesStore';
     //import { onMounted, ref, Ref } from 'vue';
-    import { useExercisesStore } from '@/stores/exercisesStore';
+    import { tudengiteStore } from '@/stores/tudengiteStore';
     import { ref, Ref } from 'vue';
 
     import { useRouter } from 'vue-router';
 
-    const exercise: Ref<Exercise>=ref({martiklinr: '', eesnimi: '', perenimi: '', staatus: ''});
+    const exercise: Ref<Tudeng>=ref({martiklinr: '', eesnimi: '', perenimi: '', staatus: ''});
     //const {load, addExercise}=useExercise();
     //const router=useRouter();
     //onMounted(()=>load());
-    const {addExercise}=useExercisesStore();
+    const {lisaTudeng}=tudengiteStore();
     const router=useRouter();
 
     const submitForm=()=>{
-        addExercise({...exercise.value});
+        lisaTudeng({...exercise.value});
         exercise.value.martiklinr='';
         exercise.value.eesnimi='';
         exercise.value.perenimi='';
