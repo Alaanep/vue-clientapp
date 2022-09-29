@@ -1,5 +1,5 @@
 <template>
-    <ExerciseList title="Harjutuste nimekiri" />
+    <ExerciseList title="Tudengite nimekiri" />
 </template>
 
 <script setup lang="ts">

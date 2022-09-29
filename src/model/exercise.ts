@@ -1,6 +1,10 @@
 export interface Exercise {
-    name: string;
-    description: string;
+    martiklinr: string;
+    eesnimi: string;
+    perenimi: string;
+    staatus: string;
+
+
 }
 
 export interface State {

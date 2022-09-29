@@ -4,23 +4,43 @@
             <div class="mt-8 space-y-6">
                 <div class="rounded-md shadow-sm -space-y-px">
                     <div>
-                        <label for="name">Nimi</label>
+                        <label for="martiklinr">Martikli Nr</label>
                         <input
-                            id="name"
-                            name="name"
-                            v-model="exercise.name"
+                            id="martiklinr"
+                            name="martiklinr"
+                            v-model="exercise.martiklinr"
                             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                            placeholder="Nimi"
+                            placeholder="Martikli Nr"
                         />
                     </div>
                     <div>
-                        <label for="description">Kirjeldus</label>
+                        <label for="eesnimi">Eesnimi</label>
                         <input
-                            id="description"
-                            name="description"
-                            v-model="exercise.description"
+                            id="eesnimi"
+                            name="eesnimi"
+                            v-model="exercise.eesnimi"
                             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                            placeholder="Kirjeldus"
+                            placeholder="Eesnimi"
+                        />
+                    </div>
+                    <div>
+                        <label for="perenimi">Perenimi</label>
+                        <input
+                            id="perenimi"
+                            name="perenimi"
+                            v-model="exercise.perenimi"
+                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                            placeholder="Perenimi"
+                        />
+                    </div>
+                    <div>
+                        <label for="staatus">Staatus</label>
+                        <input
+                            id="staatus"
+                            name="staatus"
+                            v-model="exercise.staatus"
+                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                            placeholder="Staatus"
                         />
                     </div>
                 </div>
@@ -46,7 +66,7 @@
 
     import { useRouter } from 'vue-router';
 
-    const exercise: Ref<Exercise>=ref({name: '', description: ''});
+    const exercise: Ref<Exercise>=ref({martiklinr: '', eesnimi: '', perenimi: '', staatus: ''});
     //const {load, addExercise}=useExercise();
     //const router=useRouter();
     //onMounted(()=>load());
@@ -55,8 +75,10 @@
 
     const submitForm=()=>{
         addExercise({...exercise.value});
-        exercise.value.name='';
-        exercise.value.description='';
-        router.push({name: 'Harjutused'});
+        exercise.value.martiklinr='';
+        exercise.value.eesnimi='';
+        exercise.value.perenimi='';
+        exercise.value.staatus='';
+        router.push({name: 'Tudengid'});
     };
 </script>

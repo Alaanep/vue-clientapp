@@ -6,13 +6,13 @@ import { create } from 'domain';
 const routes: Array<RouteRecordRaw>=[
     {
         path:'/',
-        name: 'Harjutused',
+        name: 'Tudengid',
         component: ExercisesVue,
-        props: {title: 'Harjutused'},
+        props: {title: 'Tudengid'},
     },
     {
         path: '/newexercise',
-        name: 'Lisa harjutus',
+        name: 'Lisa tudeng',
         component: AddExerciseVue,
     }
 ];

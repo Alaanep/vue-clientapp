@@ -2,10 +2,12 @@
     <div class="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 text-dark-300">
         <div class="text-center bg-gray-50">
             <h1 class="font-bold">{{ title }}</h1>
-            <div v-if="exercises.length===0">Harjutused puuduvad</div>
+            <div v-if="exercises.length===0">Tudengid puuduvad</div>
             <DataTable :value="exercises" v-if="exercises.length>0">
-                <Column field="name" header="Nimi" />
-                <Column field="description" header="Kirjeldus" />
+                <Column field="martiklinr" header="Martikli Nr" />
+                <Column field="eesnimi" header="Eesnimi" />
+                <Column field="perenimi" header="Perenimi" />
+                <Column field="staatus" header="Staatus" />
             </DataTable>
         </div>
     </div>
