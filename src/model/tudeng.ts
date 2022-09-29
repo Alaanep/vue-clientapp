@@ -3,8 +3,9 @@ export interface Tudeng {
     eesnimi: string;
     perenimi: string;
     staatus: string;
-
-
+    sugu: string;
+    kuupaev: Date;
+    vanus: number;
 }
 
 export interface State {

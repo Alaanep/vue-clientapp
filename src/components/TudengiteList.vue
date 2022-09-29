@@ -8,6 +8,8 @@
                 <Column field="eesnimi" header="Eesnimi" />
                 <Column field="perenimi" header="Perenimi" />
                 <Column field="staatus" header="Staatus" />
+                <Column field="sugu" header="Sugu" />
+                <Column field="vanus" header="Vanus" />
             </DataTable>
         </div>
     </div>

@@ -35,14 +35,41 @@
                     </div>
                     <div>
                         <label for="staatus">Staatus</label>
-                        <input
+                        <select
                             id="staatus"
                             name="staatus"
                             v-model="exercise.staatus"
                             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                             placeholder="Staatus"
+                        >
+                        <option selected value="Aktiivne">Aktiivne</option>
+                        <option value="Mitte Aktiivne">Mitte Aktiivne</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="sugu">Sugu</label>
+                        <select
+                            id="sugu"
+                            name="sugu"
+                            v-model="exercise.sugu"
+                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                        >
+                        <option selected value="Naine">Naine</option>
+                        <option value="Mees">Mees</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="date">Sugu</label>
+                        <input
+                            type="Date"
+                            id="date"
+                            name="date"
+                            v-model="exercise.kuupaev"
+                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                            placeholder="date"
                         />
                     </div>
+
                 </div>
                 <div>
                     <button
@@ -62,23 +89,31 @@
     //import useExercise from '@/stores/ExercisesStore';
     //import { onMounted, ref, Ref } from 'vue';
     import { tudengiteStore } from '@/stores/tudengiteStore';
+import { createStructuralDirectiveTransform } from '@vue/compiler-core';
+import { TransformStreamDefaultController } from 'node:stream/web';
     import { ref, Ref } from 'vue';
 
     import { useRouter } from 'vue-router';
+    
+    const exercise: Ref<Tudeng>=ref({martiklinr: '', eesnimi: '', perenimi: '', staatus: '', sugu: '', kuupaev: new Date, vanus: 0});
 
-    const exercise: Ref<Tudeng>=ref({martiklinr: '', eesnimi: '', perenimi: '', staatus: ''});
-    //const {load, addExercise}=useExercise();
-    //const router=useRouter();
-    //onMounted(()=>load());
     const {lisaTudeng}=tudengiteStore();
     const router=useRouter();
 
     const submitForm=()=>{
+        var today=new Date();
+        var birthday= new Date(exercise.value.kuupaev);
+        let timeDiff =Date.now()-birthday.getTime();
+        var vanus = Math.floor((timeDiff / (1000 * 3600 * 24))/365.25);
+        exercise.value.vanus=vanus;
+        console.log(vanus);
         lisaTudeng({...exercise.value});
         exercise.value.martiklinr='';
         exercise.value.eesnimi='';
         exercise.value.perenimi='';
-        exercise.value.staatus='';
         router.push({name: 'Tudengid'});
     };
+
+    
+    
 </script>
